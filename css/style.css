@@ -57,6 +57,7 @@ body {
         width: 100%;
         text-align: center;
         color: #fff;
+        column-gap: 1.5rem;
         box-shadow: 0 0 10px rgba(255,255,255,0.1);
     }
 
@@ -85,8 +86,10 @@ body {
     }
 
     .contact-details, .company-details {
-    width: 100%;
-    box-sizing: border-box;
+        align-self: stretch;
+        width: 100%;
+        height: 50%;
+        box-sizing: border-box;
 }
 
     .company-details {
