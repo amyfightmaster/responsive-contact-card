@@ -32,10 +32,71 @@ body {
 }
 
 .contact-details,
-.company-info {
+.company-details {
     background-color: #333;
     margin: 0.75rem 0;
     padding: 0.75rem;
     border-radius: 0.75rem;
 }
 
+@media screen and (min-width: 500px) {
+    .contact-card {
+        display: grid;
+        grid-template-areas:
+            "profile-picture profile-picture"
+            "contact-details company-details";
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #222;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        max-width: 100vw;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    .profile-picture {
+        grid-area: profile-picture;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-picture img {
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        border: 3px solid #555;
+        width: 100px;
+        height: 100px;
+    }
+
+    .contact-details {
+        grid-area: contact-details;
+        background-color: #333;
+        margin: 0.75rem 0;
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+    }
+
+    .contact-details, .company-details {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    .company-details {
+        grid-area: company-details;
+        background-color: #333;
+        margin: 0.75rem 0;
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+    }
+
+
+
+}
