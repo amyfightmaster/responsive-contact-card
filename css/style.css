@@ -1,153 +1,117 @@
 @import url("./reset.css");
 
-body {
-    background-color: #111;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-}
-
 .contact-card {
-    background-color: #222;
+    background-color: white;
     padding: 1.5rem;
     border-radius: 1rem;
-    max-width: 320px;
+    max-width: 360px;
     width: 100%;
     text-align: center;
-    color: #fff;
-    box-shadow: 0 0 10px rgba(255,255,255,0.1);
-}
-
-.profile-pic img {
+    color: black;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Shared profile image styling */
+  .profile-pic img,
+  .profile-picture img {
     width: 100px;
     height: 100px;
-    justify-content: center;
-    align-items: center;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 1rem;
     border: 3px solid #555;
-}
-
-.contact-details,
-.company-details {
-    background-color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-details,
+  .company-details {
+    background-color: #faf8b3d7;
     margin: 0.75rem 0;
     padding: 0.75rem;
     border-radius: 0.75rem;
-}
-
-@media screen and (min-width: 500px) {
+    width: 100%;
+  }
+  
+  @media screen and (min-width: 600px) {
     .contact-card {
-        display: grid;
-        grid-template-areas:
-            "profile-picture profile-picture"
-            "contact-details company-details";
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        background-color: #222;
-        padding: 1.5rem;
-        border-radius: 1rem;
-        max-width: 100vw;
-        width: 100%;
-        text-align: center;
-        color: #fff;
-        column-gap: 1.5rem;
-        box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      display: grid;
+      grid-template-areas:
+        "profile contact"
+        "profile company";
+      grid-template-columns: 1fr 2fr;
+      column-gap: 1.5rem;
+      max-width: 700px;
+      aspect-ratio: 7 / 4;
+      padding: 2rem;
+      text-align: center;
     }
-
+  
     .profile-picture {
-        grid-area: profile-picture;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      grid-area: profile;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-
-    .profile-picture img {
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 1rem;
-        border: 3px solid #555;
-        width: 100px;
-        height: 100px;
-    }
-
+  
     .contact-details {
-        grid-area: contact-details;
-        background-color: #333;
-        margin: 0.75rem 0;
-        padding: 0.75rem;
-        border-radius: 0.75rem;
+      grid-area: contact;
     }
-
-    .contact-details, .company-details {
-        align-self: stretch;
-        width: 100%;
-        height: 50%;
-        box-sizing: border-box;
-    }
-
+  
     .company-details {
-        grid-area: company-details;
-        background-color: #333;
-        margin: 0.75rem 0;
-        padding: 0.75rem;
-        border-radius: 0.75rem;
-    }
-}
-
-@media screen and (min-wdith: 768px) {
-    .contact-card {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        background-color: #222;
-        padding: 1.5rem;
-        border-radius: 1rem;
-        max-width: 50vw;
-        width: 100%;
-        text-align: center;
-        color: #fff;
-        column-gap: 1.5rem;
-        box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      grid-area: company;
     }
 
-    .profile-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    @media screen and (min-width: 768px) {
+        .contact-card {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          grid-template-areas:
+            "profile contact"
+            "profile company";
+          max-width: 800px;
+          aspect-ratio: 7 / 3;
+          background-color: #f9f9f9;
+          padding: 2rem;
+          border-radius: 1rem;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+          column-gap: 2rem;
+          text-align: center;
+          color: #222;
+          width: 100%;
+        }
+      
+        .profile-picture {
+          grid-area: profile;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      
+        .profile-picture img {
+          width: 140px;
+          height: 140px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 3px solid #777;
+        }
+      
+        .contact-details {
+          grid-area: contact;
+          background-color: #fff7c2;
+          padding: 1.25rem;
+          border-radius: 0.75rem;
+          border: 1px solid #ddd;
+        }
+      
+        .company-details {
+          grid-area: company;
+          background-color: #fff7c2;
+          padding: 1.25rem;
+          border-radius: 0.75rem;
+          border: 1px solid #ddd;
+          margin-top: 1rem;
+        }
+      }
     }
-    
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid #888;
-    }
-
-    .info-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        min-height: 200px;
-}
-
-.contact-details,
-.company-info {
-  border: 1px solid #bbb;
-  border-radius: 0.75rem;
-  padding: 2.5rem;
-  background-color: #f9f9f9;
-}
-}
-    
